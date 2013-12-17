@@ -1,0 +1,6 @@
+name: ExtendTime
+version: 1.0
+description: Extend server time
+authors: 
+- _Shevchik_
+main: extendtime.Main
