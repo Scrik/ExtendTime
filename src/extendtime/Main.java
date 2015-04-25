@@ -35,13 +35,19 @@ public class Main extends JavaPlugin {
 	
 	public void onEnable()
 	{
-		Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle false");
+		//Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle false");
+		for (World world : Bukkit.getWorlds()) {
+			world.setGameRuleValue("doDaylightCycle", "false");
+		}
 		startTimeTask();
 	}
 	
 	public void onDisable()
 	{
-		Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle true");
+		//Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle true");
+		for (World world : Bukkit.getWorlds()) {
+			world.setGameRuleValue("doDaylightCycle", "true");
+		}
 	}
 	
 	private BukkitTask timetask = null;
